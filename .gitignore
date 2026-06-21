@@ -1,0 +1,12 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Generated PDF files (if saved in input/source directory)
+*.pdf
+
+# Office temporary files
+~$*
