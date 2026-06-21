@@ -27,7 +27,7 @@ A PowerShell utility to recursively convert Microsoft Office documents (Word, Ex
    ```
 3. Run the script:
    ```powershell
-   & .\Convert-DocumentsToPdf.ps1 -InputFolder "C:\path\to\source" -OutputFolder "C:\path\to\destination"
+   & .\Office2Pdf.ps1 -InputFolder "C:\path\to\source" -OutputFolder "C:\path\to\destination"
    ```
 
 ### Parameters

@@ -13,7 +13,7 @@
 .PARAMETER LogPath
     Optional path to a log file where conversion logs will be appended.
 .EXAMPLE
-    .\Convert-DocumentsToPdf.ps1 -InputFolder "C:\Docs" -OutputFolder "C:\PDFs" -LogPath "C:\Docs\conversion.log"
+    .\Office2Pdf.ps1 -InputFolder "C:\Docs" -OutputFolder "C:\PDFs" -LogPath "C:\Docs\conversion.log"
 #>
 
 param (
