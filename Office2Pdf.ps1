@@ -209,9 +209,9 @@ if ($LogPath) { Write-Log "Logging to: $LogPath" }
 Write-Log "Scanning files..."
 $files = Get-ChildItem -Path $InputFolder -Recurse -File
 
-$wordFiles = $files | Where-Object { $_.Extension -match '^\.docx?$' }
-$excelFiles = $files | Where-Object { $_.Extension -match '^\.xlsx?m?$' }
-$pptFiles = $files | Where-Object { $_.Extension -match '^\.pptx?$' }
+$wordFiles = $files | Where-Object { $_.Extension -match '^\.docx?$' -and $_.Name -notlike '~$*' }
+$excelFiles = $files | Where-Object { $_.Extension -match '^\.xlsx?m?$' -and $_.Name -notlike '~$*' }
+$pptFiles = $files | Where-Object { $_.Extension -match '^\.pptx?$' -and $_.Name -notlike '~$*' }
 
 $wordCount = if ($null -ne $wordFiles) { $wordFiles.Count } else { 0 }
 $excelCount = if ($null -ne $excelFiles) { $excelFiles.Count } else { 0 }
