@@ -277,7 +277,7 @@ if ($wordFiles) {
                         # ExportAsFixedFormat(OutputFileName, ExportFormat=17 [wdExportFormatPDF])
                         $doc.ExportAsFixedFormat($pdfPath, 17)
                         $doc.Close($false) # Close(SaveChanges=$false)
-                        
+                        [System.IO.File]::SetLastWriteTime($pdfPath, $file.LastWriteTime)
                         & $WriteLog "  [SUCCESS] Created: $targetName" "INFO" $using:LogPath $using:LogLock
                         $success++
                     } catch {
@@ -332,7 +332,7 @@ if ($wordFiles) {
                     # ExportAsFixedFormat(OutputFileName, ExportFormat=17 [wdExportFormatPDF])
                     $doc.ExportAsFixedFormat($pdfPath, 17)
                     $doc.Close($false) # Close(SaveChanges=$false)
-                    
+                    [System.IO.File]::SetLastWriteTime($pdfPath, $file.LastWriteTime)
                     Write-Log "  [SUCCESS] Created: $targetName"
                     $successCount++
                 } catch {
@@ -415,7 +415,7 @@ if ($excelFiles) {
                         # ExportAsFixedFormat(Type=0 [xlTypePDF], Filename, Quality=0, IncludeDocProperties=$true, IgnorePrintAreas=$true)
                         $wb.ExportAsFixedFormat(0, $pdfPath, 0, $true, $true)
                         $wb.Close($false)
-                        
+                        [System.IO.File]::SetLastWriteTime($pdfPath, $file.LastWriteTime)
                         & $WriteLog "  [SUCCESS] Created: $targetName" "INFO" $using:LogPath $using:LogLock
                         $success++
                     } catch {
@@ -482,7 +482,7 @@ if ($excelFiles) {
                     # ExportAsFixedFormat(Type=0 [xlTypePDF], Filename, Quality=0, IncludeDocProperties=$true, IgnorePrintAreas=$true)
                     $wb.ExportAsFixedFormat(0, $pdfPath, 0, $true, $true)
                     $wb.Close($false)
-                    
+                    [System.IO.File]::SetLastWriteTime($pdfPath, $file.LastWriteTime)
                     Write-Log "  [SUCCESS] Created: $targetName"
                     $successCount++
                 } catch {
@@ -537,7 +537,7 @@ if ($pptFiles) {
                 # SaveAs(FileName, FileFormat=32 [ppSaveAsPDF])
                 $pres.SaveAs($pdfPath, 32)
                 $pres.Close()
-                
+                [System.IO.File]::SetLastWriteTime($pdfPath, $file.LastWriteTime)
                 Write-Log "  [SUCCESS] Created: $targetName"
                 $successCount++
             } catch {
